@@ -2,370 +2,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Zeyad Refaat - Software Engineering Student Portfolio">
-<title>Zeyad Refaat | Software Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zeyad Refaat — Software Engineering student, programmer, and aspiring software developer.">
+  <meta name="theme-color" content="#080d1b">
+  <title>Zeyad Refaat | Software Engineering Portfolio</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    :root {
+      --bg: #080d1b;
+      --surface: #111a2e;
+      --surface-light: #17243b;
+      --text: #f1f5f9;
+      --muted: #a4b2c7;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+      --border: rgba(148, 163, 184, 0.17);
+    }
 
-html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #172554, #0f172a);
-  background-attachment: fixed;
-  color: #f8fafc;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 8%;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #334155;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-.logo {
-  color: #38bdf8;
-  font-size: 23px;
-  font-weight: bold;
-}
+    a {
+      color: inherit;
+    }
 
-nav a {
-  color: #cbd5e1;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-  transition: 0.3s;
-}
+    .container {
+      width: min(1100px, 88%);
+      margin: auto;
+    }
 
-nav a:hover { color: #38bdf8; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 13, 27, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-section {
-  padding: 85px 8%;
-  scroll-margin-top: 65px;
-}
+    .nav-content {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-.hero {
-  min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
+    .logo {
+      color: var(--accent);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-.tag {
-  color: #38bdf8;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 18px;
-}
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
 
-.hero h1 {
-  font-size: clamp(38px, 7vw, 68px);
-  line-height: 1.15;
-  margin-bottom: 22px;
-}
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.25s;
+    }
 
-.hero h1 span, h2 span { color: #38bdf8; }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-.hero p {
-  max-width: 620px;
-  color: #cbd5e1;
-  font-size: 18px;
-}
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 13px 25px;
-  border-radius: 10px;
-  background: #38bdf8;
-  color: #082f49;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      right: -100px;
+      top: 80px;
+      background: rgba(56, 189, 248, 0.09);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-.btn:hover {
-  background: #7dd3fc;
-  transform: translateY(-3px);
-}
+    .hero-content {
+      position: relative;
+      max-width: 760px;
+      padding: 100px 0;
+    }
 
-h2 {
-  font-size: 34px;
-  margin-bottom: 30px;
-}
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.09);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 30px;
+      padding: 7px 15px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
 
-.about p {
-  max-width: 780px;
-  color: #cbd5e1;
-  font-size: 17px;
-}
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.skill {
-  background: rgba(30, 41, 59, 0.85);
-  border: 1px solid #334155;
-  padding: 12px 20px;
-  border-radius: 12px;
-  color: #bae6fd;
-  transition: 0.3s;
-}
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
 
-.skill:hover {
-  border-color: #38bdf8;
-  transform: translateY(-4px);
-}
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s;
+    }
 
-.project {
-  background: rgba(30, 41, 59, 0.9);
-  border: 1px solid #334155;
-  border-radius: 18px;
-  padding: 28px;
-  transition: 0.3s;
-}
+    .btn-primary {
+      color: #06111e;
+      background: var(--accent);
+    }
 
-.project:hover {
-  transform: translateY(-7px);
-  border-color: #38bdf8;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+    }
 
-.project h3 {
-  color: #38bdf8;
-  font-size: 21px;
-  margin-bottom: 14px;
-}
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.1);
+    }
 
-.project p {
-  color: #cbd5e1;
-  min-height: 100px;
-}
+    section {
+      padding: 85px 0;
+    }
 
-.project a {
-  display: inline-block;
-  margin-top: 16px;
-  color: #7dd3fc;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .section-label {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.project a:hover { color: white; }
+    .section-title {
+      font-size: clamp(30px, 5vw, 40px);
+      margin-bottom: 35px;
+    }
 
-.contact p {
-  color: #cbd5e1;
-  font-size: 17px;
-  margin-bottom: 12px;
-}
+    .about-card {
+      background: linear-gradient(135deg, var(--surface), #101b30);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px;
+    }
 
-.contact a {
-  color: #38bdf8;
-  text-decoration: none;
-}
+    .about-card p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 850px;
+    }
 
-.contact a:hover { color: #7dd3fc; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
 
-footer {
-  text-align: center;
-  padding: 28px;
-  background: rgba(15, 23, 42, 0.9);
-  border-top: 1px solid #334155;
-  color: #94a3b8;
-}
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 15px;
+    }
 
-@media (max-width: 600px) {
-  nav {
-    padding: 15px 5%;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+    .skill-group h3 {
+      color: var(--accent);
+      margin-bottom: 17px;
+      font-size: 18px;
+    }
 
-  nav a {
-    margin-left: 8px;
-    font-size: 12px;
-  }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
 
-  section { padding: 60px 6%; }
-  .hero { min-height: 75vh; }
-  .project p { min-height: auto; }
-}
+    .skill {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      color: #d7e5f7;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
 
-  *, *::before, *::after {
-    transition: none !important;
-  }
-}
-</style>
+    .project {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(145deg, var(--surface), #0d1628);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 27px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.6);
+    }
+
+    .project-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech {
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      padding: 5px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 17px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .project-links a:hover {
+      color: white;
+    }
+
+    .contact-card {
+      text-align: center;
+      background: linear-gradient(135deg, #12233d, #111a2e);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 50px 25px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 550px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 10px 17px;
+      transition: 0.25s;
+    }
+
+    .contact-links a:hover {
+      background: var(--surface-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      text-align: center;
+      color: #8291a8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .nav-content {
+        padding: 15px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-card {
+        padding: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">Zeyad.</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <nav>
+    <div class="container nav-content">
+      <a href="#home" class="logo">Zeyad.</a>
 
-<section class="hero">
-  <div class="tag">SOFTWARE ENGINEERING STUDENT</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <h1>Hello, I'm<br><span>Zeyad Refaat.</span></h1>
+  <header class="hero container" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">SOFTWARE ENGINEERING STUDENT</div>
 
-  <p>
-    First-year Software Engineering student passionate about
-    programming, problem solving, and building useful digital projects.
-    Currently exploring software development and improving my skills.
-  </p>
+      <h1>
+        Hello, I'm<br>
+        <span class="gradient-text">Zeyad Refaat.</span>
+      </h1>
 
-  <a class="btn" href="#projects">Explore My Projects →</a>
-</section>
-
-<section class="about" id="about">
-  <h2>About <span>Me</span></h2>
-
-  <p>
-    I'm a Software Engineering student at Suez Canal University.
-    I'm currently developing my programming skills, practicing
-    problem solving, and exploring software development through
-    practical projects. I enjoy learning new technologies and
-    turning ideas into working applications.
-  </p>
-</section>
-
-<section id="skills">
-  <h2>My <span>Skills</span></h2>
-
-  <div class="skills">
-    <div class="skill">Python</div>
-    <div class="skill">C++</div>
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">Problem Solving</div>
-    <div class="skill">GitHub</div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>My <span>Projects</span></h2>
-
-  <div class="projects">
-
-    <div class="project">
-      <h3>🎯 Guess The Number</h3>
       <p>
-        An interactive number guessing game featuring difficulty
-        levels, a scoring system, a timer, and saved high scores.
+        First-year Software Engineering student at Suez Canal University.
+        Passionate about programming, problem solving, and building
+        practical projects while continuously learning new technologies.
       </p>
 
-      <a href="https://zeyadrefaat198-art.github.io/guess-the-number/"
-         target="_blank" rel="noopener noreferrer">
-        Live Demo →
-      </a>
-      <br>
-      <a href="https://github.com/zeyadrefaat198-art/guess-the-number"
-         target="_blank" rel="noopener noreferrer">
-        Source Code →
-      </a>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
+        <a href="https://github.com/zeyadrefaat198-art"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-secondary">GitHub Profile ↗</a>
+      </div>
     </div>
+  </header>
 
-    <div class="project">
-      <h3>📝 To-Do List</h3>
-      <p>
-        A task management app that allows users to add tasks,
-        mark them as completed, delete tasks, and save them
-        using Local Storage.
-      </p>
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-label">GET TO KNOW ME</div>
+        <h2 class="section-title">About Me</h2>
 
-      <a href="https://zeyadrefaat198-art.github.io/todo-list/"
-         target="_blank" rel="noopener noreferrer">
-        Live Demo →
-      </a>
-      <br>
-      <a href="https://github.com/zeyadrefaat198-art/todo-list"
-         target="_blank" rel="noopener noreferrer">
-        Source Code →
-      </a>
+        <div class="about-card">
+          <p>
+            I'm a Software Engineering student at Suez Canal University.
+            I'm developing my programming foundations through hands-on
+            projects and consistent practice. I enjoy understanding how
+            software works, solving problems, and turning ideas into
+            useful applications. I'm currently exploring different areas
+            of software development and working to improve my technical skills.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">WHAT I'M LEARNING</div>
+        <h2 class="section-title">Skills & Technologies</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <div class="skill-tags">
+              <span class="skill">Python</span>
+              <span class="skill">C++</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Web Development</h3>
+            <div class="skill-tags">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Tools & Concepts</h3>
+            <div class="skill-tags">
+              <span class="skill">GitHub</span>
+              <span class="skill">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">SOME THINGS I'VE BUILT</div>
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+
+          <article class="project">
+            <div class="project-icon">🎯</div>
+            <h3>Guess The Number</h3>
+            <p>
+              An interactive number guessing game featuring difficulty
+              levels, a scoring system, a timer, and saved high scores.
+            </p>
+            <div class="tech-list">
+              <span class="tech">Python</span>
+              <span class="tech">Game Logic</span>
+            </div>
+            <div class="project-links">
+              <a href="https://zeyadrefaat198-art.github.io/guess-the-number/"
+                 target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+              <a href="https://github.com/zeyadrefaat198-art/guess-the-number"
+                 target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-icon">📝</div>
+            <h3>To-Do List</h3>
+            <p>
+              A task management application that lets users add tasks,
+              mark them as completed, delete tasks, and save their
+              tasks using Local Storage.
+            </p>
+            <div class="tech-list">
+              <span class="tech">HTML</span>
+              <span class="tech">CSS</span>
+              <span class="tech">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://zeyadrefaat198-art.github.io/todo-list/"
+                 target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+              <a href="https://github.com/zeyadrefaat198-art/todo-list"
+                 target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-icon">🌤️</div>
+            <h3>Weather App</h3>
+            <p>
+              A responsive weather application that allows users to
+              search for cities and view current weather information
+              using the Open-Meteo API.
+            </p>
+            <div class="tech-list">
+              <span class="tech">HTML</span>
+              <span class="tech">CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://zeyadrefaat198-art.github.io/weather-app/"
+                 target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+              <a href="https://github.com/zeyadrefaat198-art/weather-app"
+                 target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="section-label">LET'S CONNECT</div>
+          <h2 class="section-title">Get In Touch</h2>
+
+          <p>
+            I'm always interested in learning, collaborating,
+            and connecting with people in technology.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://github.com/zeyadrefaat198-art"
+               target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+            <a href="https://www.linkedin.com/in/zeyad-refaat-88a028406/"
+               target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Zeyad Refaat. Built with HTML & CSS.
     </div>
-
-    <div class="project">
-      <h3>🌤️ Weather App</h3>
-      <p>
-        A responsive weather application that lets users search
-        for cities and view current temperature, weather conditions,
-        feels-like temperature, humidity, and wind speed using
-        the Open-Meteo API.
-      </p>
-
-      <a href="https://zeyadrefaat198-art.github.io/weather-app/"
-         target="_blank" rel="noopener noreferrer">
-        Live Demo →
-      </a>
-      <br>
-      <a href="https://github.com/zeyadrefaat198-art/weather-app"
-         target="_blank" rel="noopener noreferrer">
-        Source Code →
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2>Contact <span>Me</span></h2>
-
-  <p>
-    GitHub:
-    <a href="https://github.com/zeyadrefaat198-art"
-       target="_blank" rel="noopener noreferrer">
-      github.com/zeyadrefaat198-art
-    </a>
-  </p>
-
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/zeyad-refaat-88a028406/"
-       target="_blank" rel="noopener noreferrer">
-      linkedin.com/in/zeyad-refaat
-    </a>
-  </p>
-</section>
-
-<footer>
-  © 2026 Zeyad Refaat. Built with HTML, CSS & JavaScript.
-</footer>
+  </footer>
 
 </body>
 </html>
